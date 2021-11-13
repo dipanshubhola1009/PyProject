@@ -93,13 +93,15 @@ plot_tree(model_tree,
            rounded = True,
            filled = True)
 
-# plt.show()
+plt.show()
 
 y_train_pred = model_tree.predict(X_train)
 y_valid_pred = model_tree.predict(X_valid)
 
 auc_train = metrics.roc_auc_score(y_train, y_train_pred)
 auc_valid = metrics.roc_auc_score(y_valid, y_valid_pred)
+
+
 
 print("AUC Train = {}\nAUC Valid = {}".format(round(auc_train,4), round(auc_valid,4)))
 
